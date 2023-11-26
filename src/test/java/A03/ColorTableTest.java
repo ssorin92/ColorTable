@@ -17,5 +17,13 @@ public class ColorTableTest {
         assertEquals(paletteSize, colorTable.getPaletteSize());
     }
 
+    @Test
+    public void testConstructorWithInvalidPaletteSizeThrowsException() {
+        // Given
+        int invalidPaletteSize = 3;
+
+        // When and Then
+        assertThrows(InvalidPaletteSizeException.class, () -> new ColorTable(invalidPaletteSize));
+    }
 
 }
