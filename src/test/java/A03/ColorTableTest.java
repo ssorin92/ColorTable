@@ -26,4 +26,18 @@ public class ColorTableTest {
         assertThrows(InvalidPaletteSizeException.class, () -> new ColorTable(invalidPaletteSize));
     }
 
+    @Test
+    public void testAddValidColor() {
+        // Given
+        ColorTable colorTable = new ColorTable(4);
+        int rgbValue = 0xFF0000; // Red color
+
+        // When
+        colorTable.add(rgbValue);
+
+        // Then
+        assertTrue(colorTable.contains(rgbValue));
+    }
+
+
 }
